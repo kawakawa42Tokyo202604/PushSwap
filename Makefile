@@ -63,3 +63,10 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re bonus
+
+PYTHON ?= python3
+
+test: $(NAME) $(BONUS_NAME)
+	$(PYTHON) -m unittest discover -s tests -v
+
+.PHONY: test
